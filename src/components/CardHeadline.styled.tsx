@@ -1,11 +1,15 @@
 import styled from "styled-components";
 
-export const StyledCardHeadline = styled.h3`
-  color: rgba(0, 0, 0, 0.83);
-  font-family: Inter;
-  font-size: 28px;
+type StyledCardHeadlinePropsType = {
+    headline?: string
+
+}
+export const CardHeadlineStyled = styled.h3<StyledCardHeadlinePropsType>`
+  color: #000;
+  font-size: 16px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   text-align: left;
+  margin-bottom: 20px;
 `
