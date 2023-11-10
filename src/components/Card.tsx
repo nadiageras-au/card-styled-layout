@@ -2,9 +2,9 @@ import React from "react";
 import {StyledImg} from "./Image.styled";
 import CardImg from "../images/cardImg.jpeg";
 import styled from "styled-components";
-import {CardHeadlineStyled} from "./CardHeadline.styled";
+import {StyledCardHeadline} from "./CardHeadline.styled";
 import {TextParagraphStyled} from "./TextParagraph.styled";
-import {StyledBtn, StyledBtnLink} from "./Btn.styled";
+import {StyledBtn} from "./Btn.styled";
 
 type CardPropsType = {
     headline: string
@@ -16,14 +16,14 @@ export default function Card(props: CardPropsType) {
         <StyledCardBox>
             <StyledImg src={CardImg}/>
             <StyledCardTextBox>
-                <CardHeadlineStyled>{props.headline}</CardHeadlineStyled>
+                <StyledCardHeadline>{props.headline}</StyledCardHeadline>
                 <TextParagraphStyled>
                     Faucibus. Faucibus. Sit sit sapien sit tempusrisu ut. Sit molestie ornare in venen.
                 </TextParagraphStyled>
-                <StyledFlexBox>
-                    <StyledBtnLink btnType={"primary"}>See more</StyledBtnLink>
+                <StyledBtnFlexBox>
+                    <StyledBtn  as="a" href={"#"} btnType={"primary"}>See more</StyledBtn>
                     <StyledBtn btnType={"outlined"}>Save</StyledBtn>
-                </StyledFlexBox>
+                </StyledBtnFlexBox>
             </StyledCardTextBox>
         </StyledCardBox>
 
@@ -34,6 +34,7 @@ const StyledCardBox = styled.div`
   padding: 10px 10px 22px;
   display: flex;
   flex-direction: column;
+  width:100%;
   max-width: 300px;
   min-height: 350px;
   background-color: #fff;
@@ -49,8 +50,10 @@ const StyledCardTextBox = styled.div`
   padding-right: 10px;
 `
 
-const StyledFlexBox = styled.div`
+const StyledBtnFlexBox = styled.div`
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
 `
 

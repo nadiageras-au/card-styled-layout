@@ -4,7 +4,7 @@ type StyledCardHeadlinePropsType = {
     headline?: string
 
 }
-export const CardHeadlineStyled = styled.h3<StyledCardHeadlinePropsType>`
+export const StyledCardHeadline = styled.h3<StyledCardHeadlinePropsType>`
   color: #000;
   font-size: 16px;
   font-style: normal;
